@@ -1,0 +1,252 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+local UI = Material.Load({
+     Title = "Project Nigma",
+     Style = 3,
+     SizeX = 400,
+     SizeY = 300,
+     Theme = "Dark"
+})
+
+local Page = UI.New({
+    Title = "Scripts"
+})
+
+
+Page.Button({
+    Text = "UFO",
+    Callback = function()
+       loadstring(game:HttpGetAsync('https://pastebin.com/raw/LncPZQb5'))()
+    end
+})
+
+
+Page.Button({
+    Text = "SpiderMan",
+    Callback = function()
+       loadstring(game:HttpGetAsync('https://pastebin.com/raw/ZGtaDfRH'))()
+    end
+})
+
+
+Page.Button({
+    Text = "Galaxy Sword",
+    Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/Azetax/script-for-roblox/main/OP'),true))()
+    end
+})
+
+
+Page.Button({
+    Text = "Sonic",
+    Callback = function()
+       loadstring(game:HttpGetAsync('https://pastebin.com/raw/prXw8XXG%27'))()
+    end
+})
+
+
+
+Page.Button({
+    Text = "powerful sword",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/t0Mkc33N"))() 
+    end
+})
+
+
+
+Page.Button({
+    Text = "Gravity Controller",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/TzYMyF0b"))()  
+    end
+})
+
+
+Page.Button({
+    Text = "Fallen Anger",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/MksqXhEU"))()  
+    end
+})
+
+
+Page.Button({
+    Text = "Scp-096",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/CBLQeCbd"))()  
+    end
+})
+
+
+Page.Button({
+    Text = "Overseer Scythe",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/FQLFb2Wt"))()  
+    end
+})
+
+
+Page.Button({
+    Text = "Cyber Sniper",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/5DRp3cSP"))()  
+    end
+})
+
+
+Page.Button({
+    Text = "Chara",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/bcZuU3pT"))() 
+    end
+})
+
+
+Page.Button({
+    Text = "Killer",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/vBkJuYic"))() 
+    end
+})
+
+
+Page.Button({
+    Text = "Creeper",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/aSRRmyuh"))() 
+    end
+})
+
+
+Page.Button({
+    Text = "Cursed Creeper",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/aSRRmyuh"))() 
+    end
+})
+
+
+Page.Button({
+    Text = "Motorcycle",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/UcVkmh6J"))() 
+    end
+})
+
+
+Page.Button({
+    Text = "Copter",
+    Callback = function()
+       loadstring(game:HttpGetAsync("https://pastebin.com/raw/iUCyPWiv"))()  
+    end
+})
+
+
+
+local Page = UI.New({
+    Title = "Universal"
+})
+
+Page.Slider({
+    Text = "Jump Power",
+    Callback = function(value)
+        local plr = game.Players.LocalPlayer
+
+        plr.Character.Humanoid.JumpPower = value
+    end,
+    Min = 0,
+    Max = 1000,
+    Def = 4
+})
+
+Page.Slider({
+    Text = "Speed",
+    Callback = function(value)
+
+local walkSpeed = value
+ 
+local gmt = getrawmetatable(game)
+ 
+setreadonly(gmt, false)
+ 
+local oldindex = gmt.__index
+ 
+gmt.__index = newcclosure(function(self,b)
+ 
+if b == "WalkSpeed" then
+ 
+return 16
+ 
+end
+ 
+return oldindex(self,b)
+ 
+end)
+ 
+ 
+ 
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
+    end,
+    Min = 0,
+    Max = 1000,
+    Def = 4
+})
+
+
+Page.Toggle({
+    Text = "Infinity Jump",
+    Callback = function(value)
+        local InfiniteJumpEnabled = true
+    game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+    end,
+    Enabled = false
+})
+
+
+Page.Toggle({
+    Text = "normal speed",
+    Callback = function(value)
+        
+local walkSpeed = 16
+ 
+local gmt = getrawmetatable(game)
+ 
+setreadonly(gmt, false)
+ 
+local oldindex = gmt.__index
+ 
+gmt.__index = newcclosure(function(self,b)
+ 
+if b == "WalkSpeed" then
+ 
+return 16
+ 
+end
+ 
+return oldindex(self,b)
+ 
+end)
+ 
+ 
+ 
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
+    end,
+    Enabled = true
+})
+
+
+
+    Page.Toggle({
+    Text = "normal Jump power",
+    Callback = function(value)
+                local plr = game.Players.LocalPlayer
+
+              plr.Character.Humanoid.JumpPower = 35
+    end,
+    Enabled = true
+})
